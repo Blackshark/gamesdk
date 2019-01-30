@@ -1,2 +1,2 @@
 # gamesdk
-黑鲨手机游戏sdk
+Blackshark Gaming Mobile GameSDK
