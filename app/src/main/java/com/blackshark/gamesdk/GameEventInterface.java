@@ -1,9 +1,9 @@
 package com.blackshark.gamesdk;
 
 /**
- * ﻿BlackShark Gaming Phone has rich vibration, lighting effects.
- * <code>GameEventInterface</code> is provided for Game developers
- * Blackshark team will customize a set of vibration & light effects for your game's dedicated use
+ * ﻿BlackShark Gaming Phone has rich vibration, lighting effects.<br>
+ * <code>GameEventInterface</code> is provided for Game vendor.<br>
+ * Blackshark team will customize a set of vibration & light effects for your game's dedicated use.<br>
  */
 public class GameEventInterface {
     /**
