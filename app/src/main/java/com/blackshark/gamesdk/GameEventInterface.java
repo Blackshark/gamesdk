@@ -1,12 +1,10 @@
 package com.blackshark.gamesdk;
 
 import android.util.Log;
-
 import java.lang.reflect.Method;
-import java.util.Map;
 
 /**
- * ﻿BlackShark Gaming Phone has rich vibration, lighting effects.<br>
+ * BlackShark Gaming Phone has rich vibration, lighting effects.<br>
  * <code>GameEventInterface</code> is provided for Game vendor.<br>
  * Blackshark team will customize a set of vibration & light effects for your game's dedicated use.<br>
  */
@@ -18,18 +16,18 @@ public class GameEventInterface {
 
     static {
         try {
-            GAME_EVENT_IF_CLS = Class.forName("com.blackshark.gamesdkserver.GameEvent");
-            GAME_EVENT_IF_NOTIFYEVENT = GAME_EVENT_IF_CLS.getMethod("notifyEvent", Map.class);
-            GAME_EVENT_IF_NOTIFYSCENE = GAME_EVENT_IF_CLS.getMethod("notifyScene", Map.class);
+            GAME_EVENT_IF_CLS = Class.forName("com.blackshark.gamesdkmanager.Manager");
+            GAME_EVENT_IF_NOTIFYEVENT = GAME_EVENT_IF_CLS.getMethod("notifyGameEvent", int.class);
+            GAME_EVENT_IF_NOTIFYSCENE = GAME_EVENT_IF_CLS.getMethod("notifyGameScene", int.class);
         } catch (Exception e) {
             e.printStackTrace();
-            Log.e(TAG, "gamesdkserver.GameEvent not supported.");
+            Log.e(TAG, "com.blackshark.gamesdkmanager.manager not supported.");
         }
     }
 
     /**
-     * ﻿call this method When an action/event occurs in the game, device will perform corresponding light effect and vibration. <br>
-     * The actions/events are defined by Game vendor, like following talbe. <br>
+     * call this method When an action/event occurs in the game, device will perform corresponding light effect and vibration. <br>
+     * The actions/events are defined by Game vendor, like following table. <br>
      * Blackshark team will customize light effect and vibration. <br>
      * actions/events are different for each game. <br>
      * Here is an example of a MOBA game: <br>
@@ -77,7 +75,7 @@ public class GameEventInterface {
         }
 
         try {
-            GAME_EVENT_IF_NOTIFYEVENT.invoke(eventId);
+            GAME_EVENT_IF_NOTIFYEVENT.invoke(null, eventId);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -85,7 +83,7 @@ public class GameEventInterface {
     }
 
     /**
-     * ﻿call this method When entering an specific scene, device will perform corresponding light effect and vibration. <br>
+     * call this method When entering an specific scene, device will perform corresponding light effect and vibration. <br>
      * The scenes are defined by Game vendor, like following talbe. <br>
      * Blackshark team will customize light effect and vibration. <br>
      * scenes are different for each game. <br>
@@ -93,7 +91,7 @@ public class GameEventInterface {
      * <table border="1px">
      *     <thead bgcolor="gainsboro">
      *         <tr>
-     *             <th>﻿scene id</th>
+     *             <th>scene id</th>
      *             <th>description</th>
      *         </tr>
      *     </thead>
@@ -133,7 +131,7 @@ public class GameEventInterface {
         }
 
         try {
-            GAME_EVENT_IF_NOTIFYSCENE.invoke(sceneId);
+            GAME_EVENT_IF_NOTIFYSCENE.invoke(null, sceneId);
         } catch (Exception e) {
             e.printStackTrace();
         }

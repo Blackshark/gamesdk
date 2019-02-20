@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".GameEventInterfaceDemoActivity">
+
+    <Button
+        android:id="@+id/button_event"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="notifyEvent" />
+
+    <EditText
+        android:id="@+id/editText_event"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:text="1" />
+
+    <Button
+        android:id="@+id/button_scene"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="notifyScene" />
+
+    <EditText
+        android:id="@+id/editText_scene"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:text="1" />
+
+</LinearLayout>
