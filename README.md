@@ -1,7 +1,7 @@
 ### API Docs
 https://blackshark.github.io/gamesdk/
 ### HOW TO USE
-#### [LightManager](https://github.com/Blackshark/gamesdk/blob/master/app/src/main/java/com/blackshark/gamesdk/LightManager.java)
+#### [LightManager](https://blackshark.github.io/gamesdk/com/blackshark/gamesdk/LightManager.html)
 1. copy this [file](https://github.com/Blackshark/gamesdk/blob/master/app/src/main/java/com/blackshark/gamesdk/LightManager.java) into your project.
 2. call LightManager.notifyEvent to start or stop light effect.
 #### [GameEventInterface](https://blackshark.github.io/gamesdk/com/blackshark/gamesdk/GameEventInterface.html)
