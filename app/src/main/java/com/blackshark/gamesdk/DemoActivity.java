@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 public class DemoActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -12,7 +13,12 @@ public class DemoActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_demo);
         findViewById(R.id.button_gameeventinterface).setOnClickListener(this);
-        findViewById(R.id.button_lightmanager).setOnClickListener(this);
+        Button lightbtn = findViewById(R.id.button_lightmanager);
+        if (LightManager.isLightManagerSupported()) {
+            lightbtn.setOnClickListener(this);
+        } else {
+            lightbtn.setVisibility(View.GONE);
+        }
     }
 
     private void onClickGameEventInterface() {

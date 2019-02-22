@@ -75,6 +75,8 @@ public class LightManager {
      */
     public static final String EVENT_ANIMATION_SIDES_RHYTHM = "sides_rhythm";
 
+    private static boolean IS_SUPPORT_BSLIGHT = false;
+
     private static Class<?> EXLIGHT_CLASS = null;
     private static Method EXLIGHT_NOTIFYEVENT = null;
 
@@ -82,6 +84,9 @@ public class LightManager {
         try {
             EXLIGHT_CLASS = Class.forName("com.blackshark.exlight.ExLightManager");
             EXLIGHT_NOTIFYEVENT = EXLIGHT_CLASS.getMethod("notifyEvent", Map.class);
+            if (EXLIGHT_CLASS != null && EXLIGHT_NOTIFYEVENT != null) {
+                IS_SUPPORT_BSLIGHT = true;
+            }
         } catch (Exception e) {
             e.printStackTrace();
             Log.e(TAG, "ExLightManager not supported.");
@@ -155,5 +160,13 @@ public class LightManager {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * weather support Blackshark LightManager
+     * @return true if Blackshark LightManager supported
+     */
+    public static boolean isLightManagerSupported() {
+        return IS_SUPPORT_BSLIGHT;
     }
 }

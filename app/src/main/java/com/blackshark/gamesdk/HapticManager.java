@@ -32,7 +32,7 @@ public class HapticManager {
      * Example: <br>
      * call {@code setAudio2HapticActive(true);} before pull the trigger of the gun, <br>
      * call {@code setAudio2HapticActive(false);} after release the trigger <br>
-     * @param context
+     * @param context context of the caller
      * @param active {@code true} to enable {@code false} to disable <br>
      */
     public static void setAudio2HapticActive(Context context, boolean active) {
@@ -55,7 +55,7 @@ public class HapticManager {
      * The first value indicates the number of milliseconds to wait before turning the vibrator on. <br>
      * The next value indicates the number of milliseconds for which to keep the vibrator on before turning it off. <br>
      * Subsequent values alternate between durations in milliseconds to turn the vibrator off or to turn the vibrator on. <br>
-     * @param context
+     * @param context context of the caller
      * @param pattern an array of longs of times for which to turn the vibrator on or off.
      */
     public static void vibrate(Context context, long[] pattern) {
