@@ -12,3 +12,8 @@ https://blackshark.github.io/gamesdk/
 #### [HapticManager](https://blackshark.github.io/gamesdk/com/blackshark/gamesdk/HapticManager.html)
 1. copy this [file](https://github.com/Blackshark/gamesdk/blob/master/app/src/main/java/com/blackshark/gamesdk/HapticManager.java) into your project.
 2. there are two ways to use haptic, one is A2H(Audio to Haptic) and the other is very similar to the android traditional way(vibrate in specific pattern given in a long\[\]).
+3. you need to add the following permission to your AndroidManifest.xml to use A2H:
+``` xml
+<uses-permission android:name="android.permission.VIBRATE" />
+<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+```
