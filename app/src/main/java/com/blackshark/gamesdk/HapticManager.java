@@ -41,10 +41,10 @@ public class HapticManager {
             Log.d(TAG, "first initial sAudioManager");
         }
         if (active) {
-            sAudioManager.setParameters("a2h_bypass=0");
+            sAudioManager.setParameters("a2h_mode=1");
             if (DEBUG) Log.v(TAG, "setAudio2HapticActive true");
         } else {
-            sAudioManager.setParameters("a2h_bypass=2");
+            sAudioManager.setParameters("a2h_mode=0");
             if (DEBUG) Log.v(TAG, "setAudio2HapticActive false");
         }
     }

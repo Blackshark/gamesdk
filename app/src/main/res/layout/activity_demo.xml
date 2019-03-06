@@ -11,11 +11,20 @@
         android:id="@+id/button_gameeventinterface"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="gameEventInterface" />
+        android:text="gameEventInterface"
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/button_lightmanager"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="LightManager" />
+        android:text="LightManager"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/button_hapticmanager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HapticManager"
+        android:textAllCaps="false" />
 </LinearLayout>

@@ -19,6 +19,7 @@ public class DemoActivity extends AppCompatActivity implements View.OnClickListe
         } else {
             lightbtn.setVisibility(View.GONE);
         }
+        findViewById(R.id.button_hapticmanager).setOnClickListener(this);
     }
 
     private void onClickGameEventInterface() {
@@ -29,6 +30,10 @@ public class DemoActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(new Intent(this, LightManagerDemoActivity.class));
     }
 
+    private void onClickHapticManager() {
+        startActivity(new Intent(this, HapticDemoActivity.class));
+    }
+
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -37,6 +42,9 @@ public class DemoActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.button_lightmanager:
                 onClickLightManager();
+                break;
+            case R.id.button_hapticmanager:
+                onClickHapticManager();
                 break;
         }
     }
